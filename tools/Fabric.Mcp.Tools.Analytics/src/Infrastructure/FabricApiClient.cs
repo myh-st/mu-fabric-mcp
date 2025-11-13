@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Fabric.Mcp.Tools.Analytics.Infrastructure;
 
-public sealed class FabricApiClient(HttpClient httpClient, ILogger<FabricApiClient> logger)
+public class FabricApiClient(HttpClient httpClient, ILogger<FabricApiClient> logger)
 {
     private readonly HttpClient _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
     private readonly ILogger<FabricApiClient> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
@@ -14,7 +14,7 @@ public sealed class FabricApiClient(HttpClient httpClient, ILogger<FabricApiClie
     private const int MaxRetries = 3;
     private const int RetryDelayMilliseconds = 1000;
 
-    public async Task<string> GetAsync(string endpoint, CancellationToken cancellationToken = default)
+    public virtual async Task<string> GetAsync(string endpoint, CancellationToken cancellationToken = default)
     {
         var url = $"{BaseUrl}/{endpoint.TrimStart('/')}";
         
