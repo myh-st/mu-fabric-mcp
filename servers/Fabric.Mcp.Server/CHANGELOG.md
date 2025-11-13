@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [Unreleased]
+
+### Added
+
+- **Fabric Analytics Tools**: New analytics toolset for analyzing and optimizing Fabric resources
+  - `analytics workspace health` - Analyze workspace health status and identify issues
+  - `analytics pipeline optimize` - Optimize data pipeline performance with recommendations
+  - `analytics notebook diagnose` - Diagnose notebook issues and provide improvement suggestions
+- Service Principal authentication support for Fabric API access
+- Configurable retry logic with exponential backoff for API calls
+- Comprehensive unit tests for all analytics commands and services
+
 ## [0.0.1] - 2025-09-16
 
 ### Added
